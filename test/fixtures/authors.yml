@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  bio: MyText
+  gender: 1
+  total_book: 1
+  summary: MyText
+  born: 2022-07-09 01:38:09
+  died: 2022-07-09 01:38:09
+
+two:
+  name: MyString
+  bio: MyText
+  gender: 1
+  total_book: 1
+  summary: MyText
+  born: 2022-07-09 01:38:09
+  died: 2022-07-09 01:38:09
