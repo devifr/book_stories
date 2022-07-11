@@ -1,0 +1,34 @@
+- content_for :title, "Index"
+.page-title 
+  h3 Listing Authors
+.row
+  .col-md-12.col-lg-12
+    .card
+      .card-body
+        .pull-right
+          = link_to 'New Authors', new_author_path, class: 'btn btn-default'
+        table.table.table-hover
+          thead
+            tr
+              th Name
+              th Gender
+              th Born
+              th Died
+
+              th
+          tbody
+            - @authors.each do |author|
+              tr
+                td = author.name 
+                td = author.gender
+                td = author.born 
+                td = author.died 
+                td 
+                  = link_to author, class: 'btn btn-primary' do
+                    = icon('fa-solid', 'eye')
+                  = link_to edit_author_path(author), class: 'btn btn-success' do
+                    = icon('fa-solid', 'edit')
+                  = link_to author, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do
+                    = icon('fa-solid', 'trash')
+.text-center
+  = will_paginate @posts

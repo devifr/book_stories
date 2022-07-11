@@ -1,0 +1,35 @@
+- content_for :title, "Index"
+.page-title 
+  h3 Listing Books
+.row
+  .col-md-12.col-lg-12
+    .card
+      .card-body
+        = render 'search'
+        .pull-right
+          = link_to 'New Book', new_book_path, class: 'btn btn-default'
+        table.table.table-hover
+          thead
+            tr
+              th Title
+              th Author
+              th Year
+              th Page
+
+              th
+          tbody
+            - @books.each do |book|
+              tr
+                td = book.title 
+                td = book.author.name 
+                td = book.year 
+                td = book.pages
+                td 
+                  = link_to book, class: 'btn btn-primary' do
+                    = icon('fa-solid', 'eye')
+                  = link_to edit_book_path(book), class: 'btn btn-success' do
+                    = icon('fa-solid', 'edit')
+                  = link_to book, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do
+                    = icon('fa-solid', 'trash')
+.text-center
+  = will_paginate @posts

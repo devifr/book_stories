@@ -1,0 +1,35 @@
+= form_for(@author) do |f|
+  .mb-3
+    = f.label :name, class: 'form-label'
+    = f.text_field :name, class: 'form-control', required: true, placeholder: 'Name'
+  .mb-3
+    = f.label :bio, class: 'form-label'
+    = f.text_area :bio, class: 'form-control', required: true
+  .mb-3
+    = f.label :born, class: 'form-label'
+    = f.date_field :born, class: 'form-control'
+  .mb-3
+    = f.label :died, class: 'form-label'
+    = f.date_field :died, class: 'form-control'
+  .mb-3
+    = f.label :summary, class: 'form-label'
+    = f.text_area :summary, class: 'form-control'
+  .mb-3
+    .form-radio
+      = f.label :content_cleaned, class: 'form-radio-label' do
+        = f.check_box :content_cleaned, {class: 'form-check-input'}, true, false
+        | Content Cleaned
+  .mb-3
+    = f.label :content_available, class: 'form-check-label' do
+      = f.check_box :content_available, {class: 'form-check-input'}, true, false
+      | Content Available
+  .line
+  br/
+  .mb-3.row
+    .col-sm-4.offset-sm-2
+      = link_to books_path, class: 'btn btn-danger mb-2' do
+        = icon('fa-solid', 'times')
+        |  Cancel
+      = button_tag type: 'submit', class: "btn btn-primary mb-2"  do
+        = icon('fa-solid', 'save')
+        |  Save

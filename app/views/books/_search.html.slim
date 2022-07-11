@@ -1,0 +1,19 @@
+.card
+  .card-body
+    .col-md-12
+      = form_tag books_path, method: :get do |f|
+        .col-md-3.text-center
+          = select_tag :author_id, options_for_select(@authors), {multiple: true}
+        .col-md-3.text-center
+          = select_tag :year, options_for_select(@years), {multiple: true}
+        .col-md-2.text-center
+          = number_field_tag :from_page, class: 'form-control'
+        .col-md-2.text-center
+          = number_field_tag :to_page, class: 'form-control'
+        .col-md-2
+          = button_tag type: 'submit', class: "btn btn-primary mb-2"  do
+            = icon('fa-solid', 'search')
+            |  Search
+          = link_to books_path, class: "btn btn-info mb-2"  do
+            = icon('fa-solid', 'cycle')
+            |  Reset

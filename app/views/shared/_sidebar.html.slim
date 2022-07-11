@@ -1,0 +1,10 @@
+nav#sidebar
+  .sidebar-header
+    | Book Stories
+  ul.list-unstyled.components.text-secondary
+    li
+      = link_to authors_path, class: active_class(authors_path) do
+        | Author
+    li
+      = link_to books_path, class: active_class(books_path) do
+        | Book

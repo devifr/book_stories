@@ -1,0 +1,29 @@
+.card.mb-3
+  .text-center
+    = image_tag @book.cover, class: 'card-img-top', width: '550px'
+  .card-body
+    h3.text-center = @book.title
+    p.card-text ISBN : = @book.isbn
+    p.card-text Original Title : = @book.original_title
+    p.card-text Year : = @book.year
+    p.card-text Author : = @book.author.name
+    p.card-text Plot : = @book.plot
+    p.card-text Copyright : = @book.copyright
+    p.card-text Description : = @book.description
+    p.card-text Pages : = @book.pages
+    p.card-text Language : = @book.language
+    p.card-text ISBN13 : = @book.isbn13
+    p.card-text Release Date : = f.date_field :release_date
+    p.card-text Summary : = @book.summary
+    - if @book.content_cleaned
+      p.card-text Content Cleaned : Yes
+    - else
+      p.card-text Content Cleaned : No
+    - if @book.content_available
+      p.card-text Content Available : Yes
+    - else 
+      p.card-text Content Available :No
+  .card-footer.text-start
+    = link_to books_path, class: 'btn btn-info' do
+      = icon('fa-solid', 'arrow-left')
+      |  Back

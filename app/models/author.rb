@@ -1,4 +1,5 @@
 class Author < ApplicationRecord
+  scope :last_update, -> { order(updated_at: :desc) }
 	has_many :books
 	has_many :social_sources, as: :sourceable
 

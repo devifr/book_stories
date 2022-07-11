@@ -1,0 +1,41 @@
+.wrapper{
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  overflow-x: hidden;
+}
+#body{
+  width: 100%;
+  padding: 0;
+  min-height: 100vh;
+  transition: all 0.3s;
+  >.content{
+    position: relative;
+    padding: 0.5rem;
+    background: #f4f6fa;
+  }
+}
+a, a:hover, a:focus {
+  color: black;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.page-title {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.5555556;
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solidrgba(0,0,0,.125);
+  border-radius: 0.25rem;
+}
+.card-body {
+  flex: 1 1 auto;
+  padding: 1rem 1rem;
+}

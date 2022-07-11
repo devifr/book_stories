@@ -1,0 +1,62 @@
+= form_for(@book) do |f|
+  .mb-3
+    = f.label :isbn, class: 'form-label'
+    = f.text_field :isbn, class: 'form-control', required: true, placeholder: 'ISBN'
+  .mb-3
+    = f.label :original_title, class: 'form-label'
+    = f.text_field :original_title, class: 'form-control', required: true, placeholder: 'Original Title'
+  .mb-3
+    = f.label :year, class: 'form-label'
+    = f.number_field :year, class: 'form-control', required: true, placeholder: 'Year'
+  .mb-3
+    = f.label :author_id, class: 'form-label'
+    = f.select :author_id, @authors, {prompt: 'Please Select'}, class: 'form-control', required: true
+  .mb-3
+    = f.label :plot, class: 'form-label'
+    = f.text_area :plot, class: 'form-control', required: true
+  .mb-3
+    = f.label :copyright, class: 'form-label'
+    = f.text_field :copyright, class: 'form-control', required: true, placeholder: 'Copyright'
+  .mb-3
+    = f.label :cover, class: 'form-label'
+    = f.file_field :cover, class: 'form-control'
+  .mb-3
+    = f.label :title, class: 'form-label'
+    = f.text_field :title, class: 'form-control', required: true
+  .mb-3
+    = f.label :description, class: 'form-label'
+    = f.text_area :description, class: 'form-control', required: true
+  .mb-3
+    = f.label :pages, class: 'form-label'
+    = f.number_field :pages, class: 'form-control', required: true
+  .mb-3
+    = f.label :language, class: 'form-label'
+    = f.text_field :language, class: 'form-control', required: true
+  .mb-3
+    = f.label :isbn13, class: 'form-label'
+    = f.text_field :isbn13, class: 'form-control'
+  .mb-3
+    = f.label :release_date, class: 'form-label'
+    = f.date_field :release_date, class: 'form-control'
+  .mb-3
+    = f.label :summary, class: 'form-label'
+    = f.text_area :summary, class: 'form-control'
+  .mb-3
+    .form-check
+      = f.label :content_cleaned, class: 'form-check-label' do
+        = f.check_box :content_cleaned, {class: 'form-check-input'}, true, false
+        | Content Cleaned
+  .mb-3
+    = f.label :content_available, class: 'form-check-label' do
+      = f.check_box :content_available, {class: 'form-check-input'}, true, false
+      | Content Available
+  .line
+  br/
+  .mb-3.row
+    .col-sm-4.offset-sm-2
+      = link_to books_path, class: 'btn btn-danger mb-2' do
+        = icon('fa-solid', 'times')
+        |  Cancel
+      = button_tag type: 'submit', class: "btn btn-primary mb-2"  do
+        = icon('fa-solid', 'save')
+        |  Save

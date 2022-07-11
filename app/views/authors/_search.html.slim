@@ -1,0 +1,17 @@
+#filter.accordion
+  .card
+    #filter-header.card-header
+      h2.mb-0
+        button.btn.btn-link aria-controls="collapseOne" aria-expanded="true" data-target="#collapseOne" data-toggle="collapse" type="button" 
+          | Filter
+    #collapseOne.collapse.show aria-labelledby="headingOne" data-parent="#accordionExample" 
+      .card-body
+        = form_tag books_path, method: :get do |f|
+          .col-3
+            = select_tag :author_id, options_for_select(@authors), multiple: true
+          .col-3
+            = select_tag :year, @years, multiple: true
+          .col-3
+            = number_field_tag :from_page, class: 'form-control'
+          .col-3
+            = number_field_tag :to_page, class: 'form-control'

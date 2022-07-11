@@ -1,0 +1,58 @@
+nav.navbar.navbar-expand-lg.navbar-white.bg-white
+  button#sidebarCollapse.btn.btn-light type="button" 
+    i.fas.fa-bars
+    span
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.nav.navbar-nav.ms-auto
+      li.nav-item.dropdown
+        .nav-dropdown
+          a#nav1.nav-item.nav-link.dropdown-toggle.text-secondary aria-expanded="false" data-bs-toggle="dropdown" href="#" 
+            i.fas.fa-link
+            span Quick Links
+            i.fas.fa-caret-down style=("font-size: .8em;") 
+          .dropdown-menu.dropdown-menu-end.nav-link-menu aria-labelledby="nav1" 
+            ul.nav-list
+              li
+                a.dropdown-item href="" 
+                  i.fas.fa-list
+                  | Access Logs
+            .dropdown-divider
+      li
+        a.dropdown-item href="" 
+          i.fas.fa-database
+          | Back ups
+    .dropdown-divider
+  li
+    a.dropdown-item href="" 
+      i.fas.fa-cloud-download-alt
+      | Updates
+  .dropdown-divider
+  li
+    a.dropdown-item href="" 
+      i.fas.fa-user-shield
+      | Roles
+  li.nav-item.dropdown
+    .nav-dropdown
+      a#nav2.nav-item.nav-link.dropdown-toggle.text-secondary aria-expanded="false" data-bs-toggle="dropdown" href="#" 
+        i.fas.fa-user
+        span John Doe
+        i.fas.fa-caret-down style=("font-size: .8em;") 
+      .dropdown-menu.dropdown-menu-end.nav-link-menu
+        ul.nav-list
+          li
+            a.dropdown-item href="" 
+              i.fas.fa-address-card
+              | Profile
+          li
+            a.dropdown-item href="" 
+              i.fas.fa-envelope
+              | Messages
+          li
+            a.dropdown-item href="" 
+              i.fas.fa-cog
+              | Settings
+        .dropdown-divider
+  li
+    a.dropdown-item href="" 
+      i.fas.fa-sign-out-alt
+      | Logout
