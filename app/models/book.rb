@@ -6,8 +6,10 @@ class Book < ApplicationRecord
   
   has_one_attached :cover
   has_many_attached :images
+  
+  validates_presence_of :title, :release_date
 
-  def self.search(params)
+  def self.search(params = {})
     search = self
     search = search.where(author_id: params[:author_id]) if params[:author_id].present?
     search = search.where(year: params[:year]) if params[:year].present?
