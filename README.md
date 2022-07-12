@@ -5,10 +5,10 @@
 **Created by Devi Firdaus Fauzi**
 
 ## All Version
-Rails version             6.0.5
-Ruby version              ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [x86_64-darwin21]
-RubyGems version          3.2.3
-Rack version              2.2.4
+- Rails version             6.0.5
+- Ruby version              ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [x86_64-darwin21]
+- RubyGems version          3.2.3
+- Rack version              2.2.4
 
 ## Step To use this Application
 
