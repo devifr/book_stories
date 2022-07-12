@@ -3,12 +3,16 @@
     .col-md-12
       = form_tag books_path, method: :get do |f|
         .col-md-3.text-center
-          = select_tag :author_id, options_for_select(@authors), {multiple: true}
+          = label_tag :author_id
+          = select_tag :author_id, options_for_select(@authors), {multiple: true, class: 'select2 form-control'}
         .col-md-3.text-center
-          = select_tag :year, options_for_select(@years), {multiple: true}
+          = label_tag :year
+          = select_tag :year, options_for_select(@years), {multiple: true, class: 'select2 form-control'}
         .col-md-2.text-center
+          = label_tag :from_page
           = number_field_tag :from_page, class: 'form-control'
         .col-md-2.text-center
+          = label_tag :to_page
           = number_field_tag :to_page, class: 'form-control'
         .col-md-2
           = button_tag type: 'submit', class: "btn btn-primary mb-2"  do

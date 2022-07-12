@@ -10,7 +10,7 @@
     = f.number_field :year, class: 'form-control', required: true, placeholder: 'Year'
   .mb-3
     = f.label :author_id, class: 'form-label'
-    = f.select :author_id, @authors, {prompt: 'Please Select'}, class: 'form-control', required: true
+    = f.select :author_id, @authors, {prompt: 'Please Select'}, class: 'form-control select2', required: true
   .mb-3
     = f.label :plot, class: 'form-label'
     = f.text_area :plot, class: 'form-control', required: true
