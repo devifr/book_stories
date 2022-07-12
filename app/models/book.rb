@@ -9,6 +9,8 @@ class Book < ApplicationRecord
   
   validates_presence_of :title, :release_date
 
+  after_create :add_total_book
+
   def self.search(params = {})
     search = self
     search = search.where(author_id: params[:author_id]) if params[:author_id].present?
@@ -17,5 +19,11 @@ class Book < ApplicationRecord
     search = search.where("pages <= ?",params[:to_page]) if params[:to_page].present?
     search = search.where("similiar_books ILIKE :similar OR title ILIKE :similar",{similar: "%#{params[:similiar_book]}%"}) if params[:similiar_book].present?
     search
+  end
+
+  def add_total_book
+    author = self.author
+    new_total_book = author.total_book.to_i + 1
+    author.update(total_book: new_total_book)
   end
 end
