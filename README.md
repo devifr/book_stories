@@ -12,6 +12,7 @@ Rack version              2.2.4
 * Step To use this Application
 ** 1. Clone this application
 > git clone https://github.com/devifr/book_stories.git
+
 ** 2. Go to application folder
 > cd book_stories
 ** 3. Bundle install
