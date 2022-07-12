@@ -16,8 +16,8 @@
     = f.text_area :summary, class: 'form-control'
   .mb-3
     .form-radio
-      = f.label :content_cleaned, class: 'form-radio-label' do
-        = f.check_box :content_cleaned, {class: 'form-check-input'}, true, false
+      = f.label :gender, class: 'form-radio-label' do
+        = f.radio_box :content_cleaned, {class: 'form-check-input'}, true, false
         | Content Cleaned
   .mb-3
     = f.label :content_available, class: 'form-check-label' do

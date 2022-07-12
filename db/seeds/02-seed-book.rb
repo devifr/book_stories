@@ -33,6 +33,7 @@ books.each.with_index do |val, i|
 	book.cover.attach(io: cover  , filename: cover_name) if cover.present?
 	book.content_cleaned = val["content_cleaned"]
 	book.content_available = val["content_available"]
+	book.similiar_books = val["similar_books"].to_a.join(', ')
 	book.social_sources.new(type_source: "wikipedia", url: val["wikipedia"]["url"], found: val["wikipedia"]["found"]) if val["wikipedia"].present? && book.new_record?
 	book.social_sources.new(type_source: "goodreads", url: val["goodreads"]["url"], found: val["goodreads"]["found"], year: val["goodreads"]["year"]) if val["goodreads"].present? && book.new_record?
 	book.social_sources.new(type_source: "gutenberg", url: val["goodreads"]["url"], num: val["goodreads"]["num"]) if val["gutenberg"].present? && book.new_record?

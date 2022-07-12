@@ -2,22 +2,28 @@
   .card-body
     .col-md-12
       = form_tag books_path, method: :get do |f|
-        .col-md-3.text-center
-          = label_tag :author_id
-          = select_tag :author_id, options_for_select(@authors), {multiple: true, class: 'select2 form-control'}
-        .col-md-3.text-center
-          = label_tag :year
-          = select_tag :year, options_for_select(@years), {multiple: true, class: 'select2 form-control'}
-        .col-md-2.text-center
-          = label_tag :from_page
-          = number_field_tag :from_page, class: 'form-control'
-        .col-md-2.text-center
-          = label_tag :to_page
-          = number_field_tag :to_page, class: 'form-control'
-        .col-md-2
-          = button_tag type: 'submit', class: "btn btn-primary mb-2"  do
-            = icon('fa-solid', 'search')
-            |  Search
-          = link_to books_path, class: "btn btn-info mb-2"  do
-            = icon('fa-solid', 'cycle')
-            |  Reset
+        .col-md-12.row
+          .col-md-4
+            = label_tag :author_id
+            = select_tag :author_id, options_for_select(@authors, params[:author_id]), {multiple: true, class: 'select2 form-control'}
+          .col-md-4
+            = label_tag :year
+            = select_tag :year, options_for_select(@years, params[:year]), {multiple: true, class: 'select2 form-control'}
+          .col-md-2
+            = label_tag :from_page
+            = number_field_tag :from_page, params[:from_page], class: 'form-control'
+          .col-md-2
+            = label_tag :to_page
+            = number_field_tag :to_page,params[:to_page] , class: 'form-control'
+          .col-md-6
+            = label_tag :similiar_book
+            = text_field_tag :similiar_book, params[:similiar_book], class: 'form-control'
+        .col-md-12
+          .col-md-12.text-right
+            = button_tag type: 'submit', class: "btn btn-primary mb-2"  do
+              = icon('fa-solid', 'search')
+              |  Search
+            = link_to books_path, class: "btn btn-info mb-2"  do
+              = icon('fa-solid', 'cycle')
+              |  Reset
+hr

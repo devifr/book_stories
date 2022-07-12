@@ -13,6 +13,7 @@ class Book < ApplicationRecord
     search = search.where(year: params[:year]) if params[:year].present?
     search = search.where("pages >= ?",params[:from_page]) if params[:from_page].present?
     search = search.where("pages <= ?",params[:to_page]) if params[:to_page].present?
+    search = search.where("similiar_books ILIKE :similar OR title ILIKE :similar",{similar: "%#{params[:similiar_book]}%"}) if params[:similiar_book].present?
     search
   end
 end

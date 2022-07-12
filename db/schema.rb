@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_09_161306) do
+ActiveRecord::Schema.define(version: 2022_07_12_114931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2022_07_09_161306) do
     t.string "title"
     t.float "average_rating"
     t.integer "rating_count"
-    t.string "similiar_book_ids"
+    t.string "similiar_books"
     t.text "description"
     t.string "loc_class"
     t.integer "pages"
