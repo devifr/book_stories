@@ -19,9 +19,15 @@ Rack version              2.2.4
 ** 4. Add database.yml on config path or rename database.yml.example to database.yml
 > touch config/database.yml 
 or 
-> mv config/database.yml.example database.yml
+> mv config/database.yml.example config/database.yml
 ** 5. Set config/database.yml with you authenticate of your postgres credential
+> vim config/database.yml
 ** 6. Run create db
+> rails db:create
+_If you got error Your Yarn packages are out of date!_
+_run this command_
+> yarn install --check-files
+_then run again_
 > rails db:create
 ** 7. Run migration table
 > rails db:migrate
