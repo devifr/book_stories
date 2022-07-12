@@ -10,30 +10,44 @@ RubyGems version          3.2.3
 Rack version              2.2.4
 
 * Step To use this Application
+
 ** 1. Clone this application
 > git clone https://github.com/devifr/book_stories.git
+
 ** 2. Go to application folder
 > cd book_stories
+
 ** 3. Bundle install
 > bundle install
+
 ** 4. Add database.yml on config path or rename database.yml.example to database.yml
 > touch config/database.yml 
+
 or 
+
 > mv config/database.yml.example config/database.yml
+
 ** 5. Set config/database.yml with you authenticate of your postgres credential
 > vim config/database.yml
+
 ** 6. Run create db
 > rails db:create
+
 _If you got error Your Yarn packages are out of date!_
 _run this command_
 > yarn install --check-files
+
 _then run again_
 > rails db:create
+
 ** 7. Run migration table
 > rails db:migrate
+
 ** 8. Run db seed
 > rails db:seed
+
 ** 9. Start server of rails
 > rails s
+
 ** 10. You can run rspec test
 > bundle exec rspec spec/**/*
