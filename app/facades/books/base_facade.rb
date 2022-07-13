@@ -35,6 +35,7 @@ module Books
     end
 
     def save
+      book.cover.attach(book_params[:cover]) if book_params[:cover].present?
       form.save if form.validate(book_params)
     end
 

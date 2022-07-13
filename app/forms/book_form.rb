@@ -6,7 +6,6 @@ class BookForm < Reform::Form
   property :plot
   property :copyright
   property :title
-  property :cover
   property :description
   property :pages
   property :language
